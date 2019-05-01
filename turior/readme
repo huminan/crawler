@@ -1,0 +1,24 @@
+一、 环境配置
+1. 安装Filtler, 用来抓取浏览网页时发出的请求和收到的代码.
+2. 安装requests库来与网页通信. pip install requests
+    requests.get(url, headers, params);
+    requests.post();
+3. 安装beautifulsoup库来提炼HTML界面的信息. pip install beautifulsoup4, pip install lxml
+    soup = beautifulsoup(html_doc, 'lxml');
+    soup.title.string: 获取标题内容;
+    soup.p.string: 获取下一个p标签内容;
+    soup.a: 获取下一个超链接 (只取一个, HTML格式);
+
+    soup.find(id='link1'): 获取id为'link1'的超链接(HTML格式);
+    soup.find_all('a'): 获取所有超链接里的内容(list, HTML格式); 注: 可换成'li', 获得所有li内的内容, 再次细分...
+    soup.get_text(): 获取所有文字内容(带换行)
+
+    例: soup.a.find('img').get('src'): 获取第一个(图片)超链接的源地址.
+    注: 二级class为: 'class_'
+    soup.select("..."): 针对CSS.
+
+4. 安装selenium, pip install selenium
+    可以显式地调用浏览器, 进行拟人化的操作
+
+5. 安装浏览器驱动(如Chorme driver: https://chromedriver.storage.googleapis.com/index.html) 
+6. 
